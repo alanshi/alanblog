@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+<title>{% block title %}-{{ artcile.title }}{% endblock %}</title>
+
+{% block content %}
+{{ form.media }}
+{{ form.as_p }}
+<div class="container">
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-12 blog-main">
+
+        <div class="blog-post">
+          <h2 class="blog-post-title">{{ artcile.title }}</h2>
+          <p class="blog-description">{{ artcile.desc }}</p>
+          <hr>
+          {{ artcile.content|safe }}
+        </div><!-- /.blog-post -->
+        <p class="blog-post-meta">{{ artcile.created }} By alan</p>
+      </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+  </main><!-- /.container -->
+  </div>
+  {% endblock %}

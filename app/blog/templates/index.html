@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+</div>
+<div class="container">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="text-muted" href="#"></a>
+      </div>
+      <div class="col-4 text-center">
+        <a class="blog-header-logo text-dark" href="#">我的一些呓语</a>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+    <div class="row">
+      <div class="col-md-12 blog-main" class="container">
+
+        <div class="list-group">
+          
+          {% for acticle in articles %}
+          
+          <a href="{% url 'article_details' acticle.id %}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ acticle.title }}</h5>
+              <small>{{ acticle.created }}</small>
+            </div>
+            <p class="mb-1">{{ acticle.desc }}</p>
+          </a>
+          {% endfor %}
+  
+        </div>
+
+      </div><!-- /.blog-main -->
+
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+
+  {% endblock %}
